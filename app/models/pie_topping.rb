@@ -1,0 +1,2 @@
+class PieTopping < ApplicationRecord
+end
