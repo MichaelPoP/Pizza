@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :pies
 
   resources :toppings
-  
+
   get 'site/index'
 
   root 'site#index'
@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   get 'pie_controller/show'
 
   get 'pie_controller/create'
+
+  post '/pies/:id/toppings/new' => 'pies#add_topping', as: :add_topping
+  delete 'pies/:id/toppings/:topping_id' => 'pies#remove_topping', as: :remove_topping
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

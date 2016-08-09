@@ -2,6 +2,24 @@
 
 <h3><%= @pie.description %></h3>
 
+<div class="box">
+	<h2>Toppings</h2>
+	<ul>
+		<% @pie.toppings.each do |topping| %>
+		<li>
+			<%= link_to topping.name, topping %>
+			<%= button_to "X", remove_topping_path(@pie, topping), :method => :delete %>
+		</li>
+		<% end %>
+	</ul>
+	<% unless @toppings.empty? %>
+	    <%= form_tag add_topping_path(@pie) do %>
+	      	<%= collection_select :topping, :id, @toppings, :id, :name %>
+	      	<%= submit_tag "Add" %>
+	    <% end %>
+	<% end %>
+</div>
+
 <br>
 
 <%= link_to "Return to Pizzas", pies_path %>
