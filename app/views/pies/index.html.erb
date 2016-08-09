@@ -1,2 +1,24 @@
-<h1>Pies#index</h1>
-<p>Find me in app/views/pies/index.html.erb</p>
+<h1>Pizzas</h1>
+<h3>Pie#index</h3>
+
+<ul>
+	<% @pies.each do |p| %>
+	<li><%= link_to "#{p.name}", p %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to "Add Pizza", new_py_path %>
+<br>
+<%= link_to "Home", root_path %>
+
+
+
+
+
+
+
+
+
+
+<p>Find me in app/views/pie/index.html.erb</p>

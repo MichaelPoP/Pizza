@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get 'pie_toppings/index'
 
-  root 'pie_toppings#index'
+  resources :pies
+
+  resources :toppings
+  
+  get 'site/index'
+
+  root 'site#index'
+
+  get 'pie_toppings/index'
 
   get 'pie_toppings/create'
 
@@ -20,12 +27,6 @@ Rails.application.routes.draw do
   get 'toppings/create'
 
   get 'toppings/pie_params'
-
-  get 'pie/index'
-
-  get 'pie/create'
-
-  get 'pie/pie_params'
 
   get 'pie_controller/index'
 

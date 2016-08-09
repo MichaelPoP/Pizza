@@ -1,2 +1,18 @@
-<h1>Toppings#index</h1>
+<h1>Toppings</h1>
+<h3>Toppings#index</h3>
+
+<ul>
+	<% @toppings.each do |t| %>
+	<li><%= link_to "#{t.name}", t %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to "Add Topping", new_topping_path %>
+<br>
+<%= link_to "Home", root_path %>
+
+
+
+
 <p>Find me in app/views/toppings/index.html.erb</p>

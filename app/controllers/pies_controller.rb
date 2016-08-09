@@ -6,16 +6,20 @@ class PiesController < ApplicationController
 
   def create
   	Pie.create pie_params
-  	redirect_to pie_path
+  	redirect_to pies_path
   end
 
   def new
   	@pie = Pie.new
   end
 
+  def show
+  	@pie = find_pie
+  end
+
   private
   def pie_params
-  	params.require(:pie).permit(:name)
+  	params.require(:pie).permit(:name, :description)
   end
 
   def topping_params

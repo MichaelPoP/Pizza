@@ -1,0 +1,10 @@
+<h1>Add a Topping!</h1>
+
+<%= form_for @topping do |x| %>
+	<%= x.text_field :name, :placeholder => "Topping Name" %>
+	<%= x.submit "Add" %>
+<% end %>
+
+<br> 
+
+<%= link_to "Back To Toppings", toppings_path %>

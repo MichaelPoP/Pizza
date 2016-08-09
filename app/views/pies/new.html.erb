@@ -1,0 +1,9 @@
+<h1>Add a Pizza!</h1>
+
+<%= form_for @pie do |f| %>
+	<%= f.text_field :name, :placeholder => "Pizza Name" %>
+	<%= f.text_field :description, :placeholder => "An Italian Favorite!" %>
+	<%= f.submit "Add" %>
+<% end %>
+
+<%= link_to "Return to Pizzas", pies_path %>
